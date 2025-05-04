@@ -1,0 +1,115 @@
+// src/components/layout/Layout.scss
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem 0;
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+  }
+  
+  // Base styles for light theme
+  :root {
+    --primary-color: #4A90E2;
+    --primary-dark: #3A80D2;
+    --secondary-color: #F5F5F5;
+    --secondary-dark: #E0E0E0;
+    --success-color: #4CAF50;
+    --success-dark: #3C9F40;
+    --danger-color: #F44336;
+    --danger-dark: #E43326;
+    
+    --text-color: #333;
+    --text-secondary: #666;
+    
+    --background-color: #ffffff;
+    --card-bg: #ffffff;
+    --header-bg: #ffffff;
+    --footer-bg: #f7f7f7;
+    
+    --border-color: #eee;
+    --hover-bg: rgba(0, 0, 0, 0.05);
+  }
+  
+  // Apply light theme by default
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  // Dark theme styles
+  body[data-theme='dark'] {
+    --primary-color: #5A9CF2;
+    --primary-dark: #4A8CE2;
+    --secondary-color: #3A3A3A;
+    --secondary-dark: #444444;
+    --success-color: #5DBF61;
+    --success-dark: #4DAF51;
+    --danger-color: #FF5252;
+    --danger-dark: #EF4242;
+    
+    --text-color: #f0f0f0;
+    --text-secondary: #bbb;
+    
+    --background-color: #1a1a1a;
+    --card-bg: #333;
+    --header-bg: #222;
+    --footer-bg: #222;
+    
+    --border-color: #444;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+  }
+  
+  // Global styles
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+    margin-top: 0;
+  }
+  
+  .card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+  
+  // Responsive styles
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 1.5rem 0;
+    }
+    
+    .card {
+      padding: 1rem;
+    }
+  }

@@ -1,0 +1,65 @@
+// src/components/common/PageTitle.scss
+
+.page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color, #eee);
+    
+    .page-title-content {
+      flex: 1;
+      
+      h1 {
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-color, #333);
+      }
+      
+      .subtitle {
+        color: var(--text-secondary, #666);
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    .page-title-action {
+      margin-left: 1rem;
+    }
+  }
+  
+  // Responsive
+  @media (max-width: 768px) {
+    .page-title {
+      flex-direction: column;
+      
+      .page-title-action {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+        
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  // Dark mode
+  [data-theme='dark'] {
+    .page-title {
+      border-bottom-color: var(--border-color, #444);
+      
+      .page-title-content {
+        h1 {
+          color: var(--text-color, #f0f0f0);
+        }
+        
+        .subtitle {
+          color: var(--text-secondary, #bbb);
+        }
+      }
+    }
+  }
